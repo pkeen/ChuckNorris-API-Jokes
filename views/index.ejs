@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Norris</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="container">
+    <form action="/" method="GET">
+      <fieldset>
+        <legend>Select a category (optional)</legend>
+        <div>
+          <%- categories.map(cat => {
+            return `<input type="radio" id="${cat}" name="category" value="${cat}" />
+              <label for="${cat}">${cat}</label>`
+          }).join(""); %>
+        </div>
+      </fieldset>
+      <label for="category">Category</label>
+
+      <button class="btn btn-primary btn-lg" type="submit">Get Joke</button>
+    </form>
+    <!-- <img src="<%= jokeData.icon_url %>" alt="Chuck Norris Icon"> -->
+    <p> <%= jokeData.value %></p>
+  </body>
+</html>
